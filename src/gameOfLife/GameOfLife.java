@@ -5,7 +5,12 @@ package gameOfLife;
  */
 public class GameOfLife {
 
+    private final static int BOARD_LINES = 15;
+    private final static int BOARD_COLUMNS = 38;
+    private final static int GENERATIONS_NUMBER = 50;
+
     public static void main (String[] args) {
-        System.out.println("start of the game");
+        System.out.println("Initialization of the game");
+
     }
 }
