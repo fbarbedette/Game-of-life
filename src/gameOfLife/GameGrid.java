@@ -42,6 +42,10 @@ public class GameGrid {
         return new GameLivingCell(x, y);
     }
 
+    public GameGrid next() {
+        return null;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
