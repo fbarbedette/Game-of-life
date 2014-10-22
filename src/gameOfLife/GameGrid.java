@@ -51,7 +51,13 @@ public class GameGrid {
      * @return the game grid next generation
      */
     public GameGrid next() {
-        return new GameGrid();
+        GameGrid next = new GameGrid();
+        for (GameLivingCell cell : gridLivingCells) {
+            if (neighbours(cell) == 2) {
+                next.gridLivingCells.add(cell);
+            }
+        }
+        return next;
     }
 
     @Override
