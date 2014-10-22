@@ -11,6 +11,10 @@ public class GameGrid {
 
     private final Set<GameLivingCell> gridLivingCells;
 
+    public GameGrid() {
+        gridLivingCells = new HashSet<GameLivingCell>();
+    }
+
     public GameGrid(GameLivingCell... livingCells) {
         gridLivingCells = new HashSet<GameLivingCell>(Arrays.asList(livingCells));
     }
@@ -42,6 +46,10 @@ public class GameGrid {
         return new GameLivingCell(x, y);
     }
 
+    /**
+     * Method to get the state of the next generation of the game grid
+     * @return the game grid next generation
+     */
     public GameGrid next() {
         return new GameGrid();
     }

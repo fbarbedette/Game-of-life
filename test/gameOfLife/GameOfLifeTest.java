@@ -54,4 +54,14 @@ public class GameOfLifeTest {
     public void gridLivingCellWithOneNeighbourMustDie() {
         assertEquals(new GameGrid(), new GameGrid(at(0, 0), at(0,1)).next());
     }
+
+    @Test
+    public void gridLivingCellWithTwoNeighboursMustLive() {
+        assertEquals(new GameGrid(at(0, 1)), new GameGrid(at(0, 0), at(0,1), at(0,2)).next());
+    }
+
+    @Test
+    public void gridLivingCellWithThreeNeighboursMustLive() {
+        assertEquals(new GameGrid(at(1,1)), new GameGrid(at(0, 0), at(0, 2), at(1, 1), at(2, 1)).next());
+    }
 }
