@@ -15,6 +15,14 @@ public class GameGrid {
         gridLivingCells = new HashSet<GameLivingCell>(Arrays.asList(livingCells));
     }
 
+    public int neighbours(GameLivingCell livingCell) {
+        return -1;
+    }
+
+    public static GameLivingCell at(int x, int y) {
+        return new GameLivingCell(x, y);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,7 +41,4 @@ public class GameGrid {
         return gridLivingCells != null ? gridLivingCells.hashCode() : 0;
     }
 
-    public static GameLivingCell at(int x, int y) {
-        return new GameLivingCell(x, y);
-    }
 }

@@ -20,4 +20,9 @@ public class GameOfLifeTest {
     public void gameGridMustBeEqual() {
         assertEquals(new GameGrid(at(0, 1)), new GameGrid(at(0, 1)));
     }
+
+    @Test
+    public void neighboursNumberMustBeZeroWithoutNeighbours() {
+        assertEquals(0, new GameGrid(at(0, 1)).neighbours(at(0, 1)));
+    }
 }
