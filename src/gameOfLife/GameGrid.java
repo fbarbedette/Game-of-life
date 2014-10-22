@@ -23,8 +23,10 @@ public class GameGrid {
     public int neighbours(GameLivingCell livingCell) {
         int neighboursNumber = 0;
         for (int y = -1; y <= 1; y++) {
-            if (gridLivingCells.contains(at(livingCell.getPositionX(), livingCell.getPositionY() + y)) && y != 0 ) {
-                neighboursNumber++;
+            for (int x = -1; x <= 1; x++) {
+                if (gridLivingCells.contains(at(livingCell.getPositionX() + x, livingCell.getPositionY() + y)) && !(y == 0 && x == 0)) {
+                    neighboursNumber++;
+                }
             }
         }
         return neighboursNumber;

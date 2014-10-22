@@ -40,4 +40,9 @@ public class GameOfLifeTest {
     public void neighboursNumberMustCountHorizontalCells() {
         assertEquals(1, new GameGrid(at(0, 1), at(1, 1)).neighbours(at(0, 1)));
     }
+    @Test
+    public void neighboursNumberMustCountHorizontalAndVerticalCells() {
+        assertEquals(3, new GameGrid(at(0, 0), at(0, 1), at(1, 0), at(1, 1)).neighbours(at(0, 1)));
+    }
+
 }
