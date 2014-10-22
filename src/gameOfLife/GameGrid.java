@@ -53,7 +53,8 @@ public class GameGrid {
     public GameGrid next() {
         GameGrid next = new GameGrid();
         for (GameLivingCell cell : gridLivingCells) {
-            if (neighbours(cell) == 2) {
+            int neighboursNumber = neighbours(cell);
+            if (neighboursNumber == 2 || neighboursNumber == 3) {
                 next.gridLivingCells.add(cell);
             }
         }
