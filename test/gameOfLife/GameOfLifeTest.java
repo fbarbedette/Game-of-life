@@ -18,6 +18,6 @@ public class GameOfLifeTest {
 
     @Test
     public void gameGridMustBeEqual() {
-        assertEquals(new GameGrid(at(0, 1)), new GameGrid(at(0, 2)));
+        assertEquals(new GameGrid(at(0, 1)), new GameGrid(at(0, 1)));
     }
 }
