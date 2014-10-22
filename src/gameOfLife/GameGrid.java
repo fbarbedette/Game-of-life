@@ -57,8 +57,8 @@ public class GameGrid {
             for (int y = -1; y <= 1; y++) {
                 for (int x = -1; x <= 1; x++) {
                     GameLivingCell tmp = at(cell.getPositionX() + x, cell.getPositionY() + y);
-                    neighboursNumber = neighbours(cell);
-                    if (neighboursNumber == 2 || neighboursNumber == 3) {
+                    neighboursNumber = neighbours(tmp);
+                    if ((gridLivingCells.contains(tmp) && neighboursNumber == 2) || neighboursNumber == 3) {
                         next.gridLivingCells.add(tmp);
                     }
                 }
