@@ -16,12 +16,18 @@ public class GameGrid {
     }
 
     /**
-     * Method to get the number of neighbours of a GridLivingCell
+     * Method to get the number of neighbours of a GridLivingCell on the vertical line
      * @param livingCell - the gridLivingCell from which the neighbours number is calculated
      * @return 0
      */
     public int neighbours(GameLivingCell livingCell) {
-        return 0;
+        int neighboursNumber = 0;
+        for (int y = -1; y <= 1; y++) {
+            if (gridLivingCells.contains(at(livingCell.getPositionX(), livingCell.getPositionY() + y))) {
+                neighboursNumber++;
+            }
+        }
+        return neighboursNumber;
     }
 
     /**

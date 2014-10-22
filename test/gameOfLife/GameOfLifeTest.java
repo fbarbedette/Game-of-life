@@ -25,4 +25,9 @@ public class GameOfLifeTest {
     public void neighboursNumberMustBeZeroWithoutNeighbours() {
         assertEquals(0, new GameGrid(at(0, 1)).neighbours(at(0, 1)));
     }
+
+    @Test
+    public void neighboursNumberMustCountVerticalCells() {
+        assertEquals(1, new GameGrid(at(0, 0), at(0, 1)).neighbours(at(0, 1)));
+    }
 }
