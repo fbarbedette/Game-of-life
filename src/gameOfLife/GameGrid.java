@@ -43,7 +43,7 @@ public class GameGrid {
     }
 
     public GameGrid next() {
-        return null;
+        return new GameGrid();
     }
 
     @Override
