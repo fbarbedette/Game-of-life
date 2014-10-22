@@ -52,10 +52,16 @@ public class GameGrid {
      */
     public GameGrid next() {
         GameGrid next = new GameGrid();
+        int neighboursNumber = -1;
         for (GameLivingCell cell : gridLivingCells) {
-            int neighboursNumber = neighbours(cell);
-            if (neighboursNumber == 2 || neighboursNumber == 3) {
-                next.gridLivingCells.add(cell);
+            for (int y = -1; y <= 1; y++) {
+                for (int x = -1; x <= 1; x++) {
+                    GameLivingCell tmp = at(cell.getPositionX() + x, cell.getPositionY() + y);
+                    neighboursNumber = neighbours(cell);
+                    if (neighboursNumber == 2 || neighboursNumber == 3) {
+                        next.gridLivingCells.add(tmp);
+                    }
+                }
             }
         }
         return next;
