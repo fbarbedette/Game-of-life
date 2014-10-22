@@ -54,7 +54,7 @@ public class GameGrid {
         GameGrid next = new GameGrid();
         for (GameLivingCell cell : gridLivingCells) {
             int neighboursNumber = neighbours(cell);
-            if (neighboursNumber == 2 || neighboursNumber == 3) {
+            if (neighboursNumber == 2 || neighboursNumber == 3 || neighboursNumber >= 4 ) {
                 next.gridLivingCells.add(cell);
             }
         }
