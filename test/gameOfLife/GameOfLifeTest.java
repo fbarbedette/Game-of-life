@@ -30,4 +30,9 @@ public class GameOfLifeTest {
     public void neighboursNumberMustCountVerticalCells() {
         assertEquals(1, new GameGrid(at(0, 0), at(0, 1)).neighbours(at(0, 1)));
     }
+
+    @Test
+    public void neighboursNumberMustNotCountItself() {
+        assertEquals(0, new GameGrid(at(0, 0)).neighbours(at(0, 0)));
+    }
 }
