@@ -43,6 +43,13 @@ public class GameLivingCell {
     }
 
     @Override
+    public String toString() {
+        return "("+ positionX +
+                "," + positionY +
+                ')';
+    }
+
+    @Override
     public int hashCode() {
         int result = positionX;
         result = 31 * result + positionY;

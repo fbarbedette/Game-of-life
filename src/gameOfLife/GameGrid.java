@@ -1,7 +1,9 @@
 package gameOfLife;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -65,6 +67,50 @@ public class GameGrid {
             }
         }
         return next;
+    }
+
+    /**
+     * Method to get the max point of the grid game
+     * @return the grid max point
+     */
+    public Point getGridMaxPoint() {
+
+        Iterator<GameLivingCell> it = gridLivingCells.iterator();
+        int maxPosX = 0;
+        int maxPosY = 0;
+        while (it.hasNext()) {
+            GameLivingCell tmp = it.next();
+            if (tmp.getPositionX() > maxPosX )
+                maxPosX = tmp.getPositionX();
+            if(tmp.getPositionY() > maxPosY)
+                maxPosY = tmp.getPositionY();
+        }
+        Point max = new Point(maxPosX, maxPosY);
+        return max;
+    }
+
+    /**
+     * Method to get the min point of the grid game
+     * @return the grid min point
+     */
+    public Point getGridMinPoint() {
+
+        Iterator<GameLivingCell> it = gridLivingCells.iterator();
+        int minPosX = 0;
+        int minPosY = 0;
+        while (it.hasNext()) {
+            GameLivingCell tmp = it.next();
+            if (tmp.getPositionX() < minPosX )
+                minPosX = tmp.getPositionX();
+            if(tmp.getPositionY() < minPosY)
+                minPosY = tmp.getPositionY();
+        }
+        Point max = new Point(minPosX, minPosY);
+        return max;
+    }
+
+    public Set<GameLivingCell> getGridLivingCells() {
+        return gridLivingCells;
     }
 
     @Override

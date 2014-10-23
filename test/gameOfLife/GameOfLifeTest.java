@@ -2,9 +2,10 @@ package gameOfLife;
 
 import org.junit.Test;
 
+import java.awt.*;
+
 import static gameOfLife.GameGrid.at;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 /**
  * Created by fbarbedette on 10/22/14.
@@ -73,5 +74,15 @@ public class GameOfLifeTest {
     @Test
     public void deadCellWithExacltyThreeNeighboursMustBecomeALivingCell() {
         assertEquals(new GameGrid(at(-1, 1), at(0, 1), at(1, 1)), new GameGrid(at(0, 0), at(0, 1), at(0, 2)).next());
+    }
+
+    @Test
+    public void sizeOfGameGridMinMustBeMinLivingCellYMinusOneAndMinLivingCellXMinusOne() {
+        assertEquals(new Point(0, 0), new GameGrid(at(0, 0), at(0, 1), at(0, 2)).getGridMinPoint());
+    }
+
+    @Test
+    public void sizeOfGameGridMaxMustBeMaxLivingCellYPlusOneAndMinLivingCellXPlusOne() {
+        assertEquals(new Point(0, 2), new GameGrid(at(0, 0), at(0, 1), at(0, 2)).getGridMaxPoint());
     }
 }
